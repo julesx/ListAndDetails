@@ -8,20 +8,36 @@
              xmlns:wpfAutoGrid="clr-namespace:WpfAutoGrid;assembly=WpfAutoGrid"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
-    <materialDesign:ColorZone Margin="5" Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2" Mode="PrimaryLight">
+    
+    <materialDesign:ColorZone Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2" Mode="PrimaryLight">
 
-        <wpfAutoGrid:AutoGrid RowCount="4" Columns="100, auto">
+        <StackPanel Orientation="Vertical">
 
-            <Label Content="Name" FontStyle="Italic" />
-            <TextBlock Text="{Binding Name}" FontWeight="Bold" VerticalAlignment="Center" />
-            <Label Content="Description" FontStyle="Italic" />
-            <TextBlock Text="{Binding Description}" FontWeight="Bold" VerticalAlignment="Center" />
-            <Label Content="Salary" FontStyle="Italic" />
-            <TextBlock Text="{Binding Salary}" FontWeight="Bold" VerticalAlignment="Center" />
-            <Label Content="Date of Birth" FontStyle="Italic" />
-            <TextBlock Text="{Binding DateOfBirth}" FontWeight="Bold" VerticalAlignment="Center" />
+            <wpfAutoGrid:AutoGrid RowCount="4" Columns="100, auto">
 
-        </wpfAutoGrid:AutoGrid>
+                <Label Content="Name" FontStyle="Italic" />
+                <TextBlock Text="{Binding Name}" FontWeight="Bold" VerticalAlignment="Center" />
+                <Label Content="Description" FontStyle="Italic" />
+                <TextBlock Text="{Binding Description}" FontWeight="Bold" VerticalAlignment="Center" />
+                <Label Content="Salary" FontStyle="Italic" />
+                <TextBlock Text="{Binding Salary}" FontWeight="Bold" VerticalAlignment="Center" />
+                <Label Content="Date of Birth" FontStyle="Italic" />
+                <TextBlock Text="{Binding DateOfBirth}" FontWeight="Bold" VerticalAlignment="Center" />
+
+            </wpfAutoGrid:AutoGrid>
+
+            <Calendar SelectedDate="{Binding SelectedDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                <Calendar.BlackoutDates>
+                    <CalendarDateRange Start="07/04/2016"
+                           End="07/07/2016" />
+                    <CalendarDateRange Start="07/15/2016"
+                           End="07/18/2016" />
+                </Calendar.BlackoutDates>
+            </Calendar>
+
+        </StackPanel>
+        
+      
 
     </materialDesign:ColorZone>
 </UserControl>

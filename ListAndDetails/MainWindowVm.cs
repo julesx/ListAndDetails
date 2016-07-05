@@ -24,6 +24,7 @@ namespace ListAndDetails
             People.Add(new PersonVm("Julien", "Apprentice"));
             People.Add(new PersonVm("C4u", "Pupil"));
             People.Add(new PersonVm("Alex", "New Hire"));
+            People.Add(new PersonVm("Lynn", "Big Jerk"));
         }
     }
 }

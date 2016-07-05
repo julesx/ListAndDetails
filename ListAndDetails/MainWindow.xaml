@@ -9,10 +9,12 @@
         mc:Ignorable="d"
         BorderThickness="1"
         BorderBrush="Gray"
+        Width="800"
+        Height="650"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow">
 
     <DockPanel>
         
@@ -22,7 +24,7 @@
         
         </materialDesign:ColorZone>
         
-        <ListBox SelectedItem="{Binding SelectedPerson}" ItemsSource="{Binding People}" MinWidth="150">
+        <ListBox Margin="5" SelectedItem="{Binding SelectedPerson}" ItemsSource="{Binding People}" MinWidth="150">
             
             <ListBox.ItemTemplate>
                 <DataTemplate DataType="{x:Type local:PersonVm}">
@@ -36,14 +38,10 @@
             </ListBox.ItemTemplate>
             
         </ListBox>
-        
-        <ContentControl Content="{Binding SelectedPerson}">
-            <ContentControl.ContentTemplate>
-                <DataTemplate>
-                    <local:PersonDetailsControl />
-                </DataTemplate>
-            </ContentControl.ContentTemplate>
-        </ContentControl>
+
+        <local:PersonDetailsControl Margin="5" DataContext="{Binding SelectedPerson}" />
+
+        <local:ShiftDetailsControl Margin="5" DataContext="{Binding SelectedPerson}" />
 
     </DockPanel>
 
