@@ -36,25 +36,15 @@
             </ListBox.ItemTemplate>
             
         </ListBox>
-
-        <materialDesign:ColorZone Margin="5" Padding="16" materialDesign:ShadowAssist.ShadowDepth="Depth2" Mode="PrimaryLight">
-
-            <wpfAutoGrid:AutoGrid RowCount="4" Columns="100, auto" DataContext="{Binding SelectedPerson}">
-
-                <Label Content="Name" FontStyle="Italic" />
-                <TextBlock Text="{Binding Name}" FontWeight="Bold" VerticalAlignment="Center" />
-                <Label Content="Description" FontStyle="Italic" />
-                <TextBlock Text="{Binding Description}" FontWeight="Bold" VerticalAlignment="Center" />
-                <Label Content="Salary" FontStyle="Italic" />
-                <TextBlock Text="{Binding Salary}" FontWeight="Bold" VerticalAlignment="Center" />
-                <Label Content="Date of Birth" FontStyle="Italic" />
-                <TextBlock Text="{Binding DateOfBirth}" FontWeight="Bold" VerticalAlignment="Center" />
-
-            </wpfAutoGrid:AutoGrid>
-
-        </materialDesign:ColorZone>
-
         
+        <ContentControl Content="{Binding SelectedPerson}">
+            <ContentControl.ContentTemplate>
+                <DataTemplate>
+                    <local:PersonDetailsControl />
+                </DataTemplate>
+            </ContentControl.ContentTemplate>
+        </ContentControl>
+
     </DockPanel>
 
 </Window>

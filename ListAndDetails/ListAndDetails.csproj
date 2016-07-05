@@ -85,9 +85,16 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PersonDetailsControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainWindowVm.cs" />
+    <Compile Include="PersonDetailsControl.xaml.cs">
+      <DependentUpon>PersonDetailsControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PersonVm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
